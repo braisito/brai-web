@@ -6,9 +6,28 @@
 
 
 body {
- background: url('imagenes/test6.gif') no-repeat;
- background-size: cover;
- font-family: 'Century Gothic', sans-serif;
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  object-fit: cover;
+  background-color: black;
+}
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -10; /* Muy atrás */
+  pointer-events: none; /* No bloquea clics */
+}
 }
 
 p strong{
@@ -24,11 +43,6 @@ p strong{
  text-align: center;
  border-radius: 15px;
 }
-
-.box-img {
- border-radius: 50%;
-}
-
 .box h1 {
  font-size: 40px;
  letter-spacing: 4px;
@@ -37,7 +51,7 @@ p strong{
 }
 
 .box h2 {
-font-size: 20px;
+font-size: 20px;                                  
 font-weight: 100;
 margin-bottom: 20px;
 }
@@ -75,5 +89,62 @@ text-decoration: none;
 
 .box p a:hover {
 border-bottom: 1px solid #FFF;
-
 }
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9); /* Oscuridad al inicio */
+  z-index: 9999;
+}
+
+#enter-button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#enter-text {
+  color: white;
+  font-size: 2em;
+  font-family: Arial, sans-serif;
+  user-select: none;
+}
+.box-img {
+  width: 250px;         /* o el tamaño que tenías con el PNG */
+  height:250px;        /* debe ser igual al ancho para formar un círculo */
+  border-radius: 50%;   /* recorta en forma de círculo */
+  object-fit: cover;    /* recorta el contenido para que llene el área sin deformarse */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+ 
+}
+.box-text {
+  width: 450px;         /* o el tamaño que tenías con el PNG */
+  height: 200px;        /* debe ser igual al ancho para formar un círculo */
+  object-fit: cover;    /* recorta el contenido para que llene el área sin deformarse */
+  display: block;
+   margin-left: auto;
+  margin-right: auto;
+}
+
+
